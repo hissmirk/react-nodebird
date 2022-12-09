@@ -5,20 +5,6 @@ export const initialState = {
   loginData: {},
 }
 
-export const loginAction = (data) => {
-  return (dispatch, getState) => {
-    const state = getState();
-    dispatch(loginRequestAction());
-    axios.post('/api/login')
-      .then(() => {
-        dispatch(loginSuccessAction(res.data));
-      })
-      .catch(() => {
-        dispatch(loginFailureAction(err));
-      })
-  }
-}
-
 export const loginRequestAction = (data) => {
   return {
     type: 'LOG_IN_REQUEST',
